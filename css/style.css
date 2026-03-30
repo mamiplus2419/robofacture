@@ -1,0 +1,780 @@
+@charset "UTF-8";
+
+/* ==============================================
+   ◆ CSSリセット
+============================================== */
+
+/* 1. 全ての要素の隙間を消し、サイズ計算を楽にする */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* 2. リストだけは「ポッチ」削除 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 3. 画像下の隙間削除 */
+img {
+    vertical-align: bottom;
+    max-width: 100%;
+}
+
+/* 4. aタグの装飾リセット */
+a {
+    text-decoration: none;
+}
+
+/* 5. addressタグの装飾リセット */
+address {
+    font-style: normal;
+}
+
+
+/* ==============================================
+   ◆ 基本の色カスタム
+============================================== */
+
+/* 色指定 */
+/* 名前とカラーコードは必要に応じてカスタムする */
+:root {
+    /* メインカラー */
+    --main: #2e5f5e;
+    /* ベースカラー */
+    --base: #E2D9C8;
+    /* フォントカラー */
+    --font: #2D1E17;
+    /* アクセントカラー */
+    --accent: #f49e1b;
+}
+
+
+/* ==============================================
+   ◆ 全体に対する基本指定
+============================================== */
+
+/* スムーズにスクロール */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 150px;
+    background-color: var(--main);
+}
+
+/* 全体の文字とリズム */
+body {
+    font-size: 16px;
+    font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", sans-serif;
+    font-weight: 500;
+    color: var(--font);
+    background-color: var(--base);
+    /* テキストの両端揃え */
+    text-align: justify;
+}
+
+p {
+    line-height: 1.8;
+}
+
+/* セマンティックタグの余白（リズム） */
+section,
+article {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* 見出し（h2）のリズムを統一 */
+h2 {
+    display: table;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.2;
+
+    /* 上に40px、左右は適切に、下に20pxの隙間を固定で作る */
+    margin: 40px 0 20px 10px !important;
+
+    padding: 0 15px 2px 1.8em;
+    background: linear-gradient(transparent 60%, var(--accent) 60%);
+    position: relative;
+}
+
+/* h2の直後に来る要素の上のマージンを消して、h2側のmargin-bottomに統一させる */
+h2+dl,
+h2+p,
+h2+div,
+h2+.photo-items {
+    margin-top: 0 !important;
+}
+
+/* 念のため、dl(表)自体の余白も再確認 */
+dl {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    /* 上下の隙間を30pxに固定（h2直後以外） */
+    margin: 30px 0;
+    border: 1px solid var(--font);
+}
+
+/* ロボアイコンの位置(子) */
+h2::before {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 45%;
+    transform: translateY(-50%);
+    width: 1.5em;
+    height: 1.5em;
+    background: url(../images/robo_section_600x600.png) no-repeat center / contain;
+}
+
+h3 {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+
+/* ==============================================
+   ◆ 汎用クラス分け＋α
+============================================== */
+
+/* トップテキスト */
+.top-text {
+    margin: 40px 0;
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+}
+
+.top-text p {
+    font-family: "Zen Kurenaido", sans-serif;
+}
+
+/* 要素を横並びにするクラス(flex) */
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* コンテンツの幅を1000pxに固定して真ん中に置くクラス */
+.inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* スマホで見た時に端がくっつかないように */
+    padding: 0 20px;
+}
+
+/* class="br" 改行専用クラス(spanタグとセットで使用) */
+span.br {
+    display: block;
+    height: 0;
+    line-height: 0;
+    content: "";
+}
+
+/* 汎用リンクボタン用クラス */
+.btn-center {
+    text-align: center;
+    margin: -20px 0 60px;
+    width: 100%;
+}
+
+.link {
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 20px;
+    font-weight: bold;
+
+    /* 文字サイズに合わせた黄金比の余白 */
+    padding: 16px 36px;
+    line-height: 1;
+
+    color: #fff;
+    background-color: var(--main);
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+/* ホバー時の反転処理 */
+.link:hover {
+    background-color: var(--accent);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* dt,ddタグの枠設定クラス */
+.inner dl {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    /* ★ここで表の上下に隙間を作る */
+    margin: 30px 0;
+    border: 2px solid var(--font);
+}
+
+.inner dl .flex {
+    /* 表の行にする */
+    display: table-row;
+}
+
+.inner dt,
+.inner dd {
+    display: table-cell;
+    border: 1px solid var(--font);
+    vertical-align: middle;
+    padding: 15px;
+}
+
+.inner dt {
+    width: 35%;
+    background-color: rgba(0, 0, 0, 0.05);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 隣り合う枠線が重なって太くなるのを防ぐための設定 */
+.inner dt+dd,
+.inner dd+dt {
+    border-top: none;
+}
+
+
+/* ==============================================
+   ◆ ヘッダーを上部にビタ付け
+============================================== */
+
+/* インデックスを上部に固定 */
+.fixed {
+    /* スクロールしても上端に張り付く */
+    position: sticky;
+    /* ブラウザの最上段にビタ付け */
+    top: 0;
+    /* トップボタンより下、コンテンツより上に配置 */
+    z-index: 9990;
+    /* 横幅いっぱい使って安定させる */
+    width: 100%;
+    background-color: var(--main);
+}
+
+/* --- インデックス共通：土台 --- */
+.fixed .flex {
+    max-width: 1000px;
+    margin: 0 auto;
+    /* スマホ時の端っこ対策 */
+    padding: 0 10px;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+}
+
+.fixed .flex li {
+    list-style: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* --- ページごとのビタ付け設定 --- */
+
+/* トップページ：3列にする（100% ÷ 3 = 33.3%） */
+.col-3 li {
+    /* 10pxはgap調整分 */
+    flex: 0 0 calc(33.333% - 10px);
+}
+
+/* ルールページ：5列にする（100% ÷ 5 = 20%） */
+.col-5 li {
+    /* 10pxはgap調整分 */
+    flex: 0 0 calc(20% - 10px);
+}
+
+.fixed .flex a {
+    display: block;
+    background-color: #fff;
+    color: var(--main);
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+    transition: 0.3s;
+}
+
+.fixed .flex a:hover {
+    background-color: var(--accent);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+header {
+    padding: 5px 0 15px;
+    background-color: var(--main);
+    text-align: center;
+}
+
+
+/* ==============================================
+   ◆ メインエリア
+============================================== */
+
+/* メインビジュアル */
+.mv {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+}
+
+/* 表の設定 */
+
+/* dl全体：余計な余白を消して「表」にする */
+dl {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    /* 線を1本にまとめる */
+    margin: 10px 0;
+    border: 1px solid var(--font);
+}
+
+/* div.flex：表の「行」にする */
+dl .flex {
+    display: table-row;
+}
+
+/* セル共通：枠線を引き、中身を上下中央に */
+dt,
+dd {
+    display: table-cell;
+    border: 1px solid var(--font);
+    vertical-align: middle;
+    padding: 15px;
+    margin: 0;
+    height: 100%;
+}
+
+/* 左列（dt）：幅を固定して背景色をつける */
+dt {
+    width: 35%;
+    background-color: rgba(0, 0, 0, 0.05);
+    text-align: center;
+    font-weight: bold;
+}
+
+/* 右列（dd）：背景を白っぽくして左揃え */
+dd {
+    width: 65%;
+    text-align: left;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+/* 写真の設定 */
+.photo-items {
+    /* ★セクション自体の上下に大きな隙間 */
+    margin: 60px 0;
+}
+
+.photo-items h2 {
+    /* ★見出しと写真の間の隙間 */
+    margin-bottom: 30px;
+}
+
+/* 写真を包む div */
+.photo-items .flex {
+    /* 汎用のflexを上書き */
+    display: flex;
+    /* 縦並びを強制 */
+    flex-direction: column;
+    align-items: center;
+    /* ★写真同士の間の隙間（広めに設定） */
+    gap: 20px;
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+div.photo-items {
+    margin: 0px 0;
+}
+
+
+/* ==============================================
+   ◆ フッター
+============================================== */
+
+footer {
+    padding: 15px 0 5px;
+    background-color: var(--main);
+    text-align: center;
+}
+
+footer small {
+    color: #fff;
+}
+
+
+/* ==============================================
+   ◆ トップボタン
+============================================== */
+
+/* 1. 外枠：サイズを少し調整して、ロボがのびのび動けるようにする */
+.robo-bura {
+    position: fixed;
+    bottom: 30px;
+    right: 15px;
+    width: 120px;
+    /* ★100pxから少し広げる */
+    height: 120px;
+    /* ★高さも固定してあげると安定します */
+    z-index: 9999;
+}
+
+/* 2. 中の画像2枚（通常・ホバー）共通 */
+.robo-bura img {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    width: 120px;
+    /* ★ここ！通常時のロボもしっかり120pxに指定 */
+    height: auto;
+    transition: opacity 0.2s;
+}
+
+/* 3. 【重要】初期状態の重なり順を数値で固定 */
+
+/* ソケット：一番奥（10） */
+.btn-socket {
+    z-index: 10;
+}
+
+/* 通常ロボ：★最初に見せたいから数値を高くする（30）★ */
+.robo-normal {
+    opacity: 1 !important;
+    z-index: 30;
+    animation: purupuru 7s steps(4) infinite;
+}
+
+/* ホバーロボ：最初は後ろに隠す（20） */
+.robo-active {
+    opacity: 0 !important;
+    z-index: 20;
+}
+
+/* 4. クリック判定の透明な箱 */
+.btn-robo {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 120px;
+    /* ★外枠と同じサイズにする */
+    height: 120px;
+    z-index: 10;
+}
+
+/* --- 5. ホバー時の物理的な切り替え命令 --- */
+
+/* aを触ったら：通常ロボを背後に送って消す */
+.btn-robo:hover .robo-normal {
+    opacity: 0 !important;
+    z-index: 10;
+}
+
+/* aを触ったら：ホバーロボを最前面に出す */
+.btn-robo:hover .robo-active {
+    opacity: 1 !important;
+    z-index: 50;
+    animation: gatagata 0.5s infinite !important;
+}
+
+@keyframes purupuru {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    10%,
+    90% {
+        transform: translate(3px, 1px);
+    }
+
+    20%,
+    80% {
+        transform: translate(0, 0);
+    }
+
+    30%,
+    70% {
+        transform: translate(-3px, -1px);
+    }
+
+    40%,
+    60% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(3px, 1px);
+    }
+}
+
+/* 1. 激しい動き（ガタガタ）の定義 */
+@keyframes gatagata {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    20% {
+        transform: translate(-3px, 1px);
+    }
+
+    40% {
+        ransform: translate(3px, -1px);
+    }
+
+    60% {
+        transform: translate(-3px, -1px);
+    }
+
+    80% {
+        transform: translate(3px, 1px);
+    }
+
+    100% {
+        transform: translate(-2px, -2px);
+    }
+}
+
+
+
+
+/* ==============================================
+   ◆ ルールページ追加設定
+============================================== */
+
+.index ul {
+    padding-left: 50px;
+}
+
+.index a {
+    color: var(--main);
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s
+}
+
+.index a:hover {
+    background-color: var(--accent);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.component {
+    max-width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.component li {
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+/* ==============================================
+   ◆ レスポンシブ：タブレット（768px以下）から適用
+============================================== */
+@media (max-width: 768px) {
+
+    header nav ul li a {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%; 
+        height: 100%;
+        min-height: 38px;
+        padding: 5px 0;
+        font-size: 14px;
+        line-height: 1;
+        display: flex;
+    }
+
+    /* 共通：画像が画面幅を突き破るのを防ぐ */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* 共通：見出しのマーカーの調整 */
+    h2 {
+        background-color: var(--accent);
+    }
+
+    /* 共通：figcaption間の間隔調整 */
+    figcaption {
+        margin-bottom: 5px;
+    }
+
+    /* 中身の横幅を画面に合わせる */
+    .inner {
+        width: 100% !important;
+        padding: 0 80px;
+        box-sizing: border-box;
+    }
+
+    /* ロボ（上に戻るボタン）を少し小さくする（タブレットサイズ） */
+    .robo-bura {
+        width: 80px;
+        right: 0;
+    }
+
+    .robo-bura img {
+        width: 80px !important;
+        height: auto;
+    }
+}
+
+/* ==============================================
+   ◆ レスポンシブ：スマホ（500px以下）でさらに調整
+============================================== */
+@media (max-width: 500px) {
+
+    header img,footer img {
+        width: 200px;
+    }
+
+    /* ナビゲーションの「列」と「高さ」の調整 */
+    header nav ul.flex.col-3,
+    header nav ul.flex.col-5 {
+        display: flex;
+        flex-wrap: wrap;
+        /* 折り返しを許可 */
+        justify-content: center;
+        gap: 5px;
+        align-items: flex-start;
+        /* ← ここ重要！高さを強制的に揃えない */
+    }
+
+    header nav ul li {
+        /* スマホでは2列にする（100%の半分からgap分を引く） */
+        flex: 0 0 calc(50% - 10px) !important;
+        width: auto;
+    }
+
+    header nav ul li a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: auto !important;
+        min-height: 24px;
+        padding: 5px;
+        font-size: 12px;
+        line-height: 1;
+        box-sizing: border-box;
+    }
+
+    /* 全体の横幅調整 */
+    .inner {
+        width: 100% !important;
+        padding: 0 35px;
+        box-sizing: border-box;
+    }
+
+    /* フォントサイズの調整 */
+    body,
+    .top-text,
+    .index a,
+    figcaption {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+        scroll-margin-top: 60px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    small {
+        font-size: 11px;
+    }
+
+    /* ロボ（上に戻るボタン）の縮小 */
+    .robo-bura {
+        width: 55px;
+        right: -10px;
+    }
+
+    .robo-bura img {
+        width: 55px !important;
+        height: auto;
+    }
+
+    /* テーブル（基本情報）の折り返し */
+    .common-table .flex {
+        flex-wrap: wrap;
+    }
+}
+
+
+/* ==============================================
+   ◆ ロード時の動画再生
+============================================== */
+
+#loading {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.5s;
+}
+
+.loading-robo {
+  width: 20vw;
+  min-width: 150px;
+  height: auto;
+}

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ロボファクチュア - ルール</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../images/robo_favicon_120x120.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+    </div>
+</head>
+
+<body>
+
+    <header class="fixed">
+        <nav class="fixed">
+            <ul class="flex col-5">
+                <li><a href="#">ホーム</a></li>
+                <li><a href="../index.html">ゲーム概要に戻る</a></li>
+                <li><a href="#section1">プロローグ</a></li>
+                <li><a href="#section2">コンポーネント</a></li>
+                <li><a href="#section3">ゲームの準備</a></li>
+                <li><a href="#section4">リソースの管理方法</a></li>
+                <li><a href="#section5">ゲームの構成</a></li>
+                <li><a href="#section6">ゲームの流れ</a></li>
+                <li><a href="#section7">勝利条件</a></li>
+                <li><a href="#section8">アクションの説明</a></li>
+            </ul>
+        </nav>
+        <h1><a href="index.html">
+                <img src="../images/robofac_logo_wh_600x70.svg" alt="ロボファクチュアのロゴ" width="300">
+            </a>
+        </h1>
+    </header>
+
+    <main>
+        <div class="inner">
+            <h1>ロボファクチュア　工場運営マニュアル(ゲームルール)※整備中</h1>
+
+            <section class="index">
+                <h2>目次</h2>
+                <ul>
+                    <li><a href="#section1">プロローグ(仮)</a></li>
+                    <li><a href="#section2">コンポーネント</a></li>
+                    <li><a href="#section3">ゲームの準備</a></li>
+                    <li><a href="#section4">リソースの管理方法</a></li>
+                    <li><a href="#section5">ゲームの構成</a></li>
+                    <li><a href="#section6">ゲームの流れ</a></li>
+                    <li><a href="#section7">勝利条件</a></li>
+                    <li><a href="#section8">アクションの説明</a></li>
+                    <li><a href="#section9">ソロルール(執筆中)</a></li>
+                </ul>
+            </section>
+
+            <section class="info-section">
+                <h2 id="section1">プロローグ(仮)</h2>
+                <p>
+                    かつて人類が使用していた小さな工場がありました。<span class="br"></span>
+                    管理人たちは、その工場とぽんこつな据置型ロボ、廃棄処分寸前のパーツを組み合わせて製品の製造・出荷してこの寂れた工場を立て直そうと画策したのです。<span class="br"></span>
+                    電気は最低限供給され、その中でやりくりをする必要があります。<span class="br"></span>
+                    稼働できるロボが増えれば、少しだけ電気供給は増やしてもらえます。<span class="br"></span>
+                    ただし、ロボは電気がなければ動かないし、工場の設備の使用は早い者勝ちです。<span class="br"></span>
+                    そんな中、誰よりも効率よく製品を製造出荷し、工場を上手く回せるのは誰でしょうか！？
+                </p>
+            </section>
+
+            <section class="info-section">
+                <h2 id="section2">コンポーネント</h2>
+                <div class="hosoku-container">
+                    <p class="hosoku">※I、O は数字と識別が困難であるため欠番</p>
+                </div>
+
+                <ul class="component">
+                    <li>A ロボファクチュア　工場運営マニュアル(ルールブック、本書) 1部</li>
+                    <li>B 化粧箱 (A4サイズ、深さ50mm見込み)</li>
+                    <figure>
+                        <figcaption>C 工場ボード (A2サイズ、4つ折り) 1枚</figcaption>
+                        <img src="../images/gameboard_522x372.png" alt="メインで使用する大きなゲームボード" width="800">
+                    </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <figcaption>D 加工場ボード (A4サイズ) 4色 各1枚</figcaption>
+                            <img src="../images/personalboard_421x297.png" alt="個人で使用するゲームボード" width="600">
+                        </figure>
+                    </li>
+                    <li>E サマリーカード (ポーカーサイズ、88×63mm) 4枚or8枚</li>
+                    <li>
+                        <figure>
+                            <figcaption>F ロボ駒(ワーカー駒) 4色 4個</figcaption>
+                            <img src="../images/robokoma_720x216.svg" alt="かわいいロボの形をした木の駒" width="400">
+                        </figure>
+                    </li>
+                    <li>G パーソナルマーカー (12×12mm) 4色 各5枚</li>
+                    <li>
+                        <figure>
+                            <figcaption>H VPマーカー *1 (20×30mm？) 4色 各1枚</figcaption>
+                            <img src="../images/vpmarker_450x80.svg" alt="段ボールを模した勝利点管理用マーカー" width="400">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <figcaption>J 電気マーカー (円形、直径15mm) 黒 1枚、黄 4枚</figcaption>
+                            <img src="../images/denkimarker_330x160.png" alt="使用可能電力管理用マーカー" height="20">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <figcaption>K スタートプレイヤーマーカー</figcaption>
+                            <img src="../images/startplayermarker_340x283.png" alt="ロボの絵が描かれている、スタートプレイヤー並びに登板把握用のマーカー"
+                                width="300">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <figcaption>L RGマーカー *2 (円形、直径15mm) 8枚</figcaption>
+                            <img src="../images/robogold_160x160.png" alt="ロボがあしらわれた硬貨" height="20">
+                        </figure>
+                    </li>
+                    <li>
+                        <figure>
+                            <figcaption>M パーツタイル</figcaption>
+                            <img src="../images/partstile_1000x390.png" alt="テトリミノ等、様々な形をしたタイル" width="600">
+                        </figure>
+                        <dl>
+                            <div class="flex">
+                                <dt>ペントミノ<span class="br"></span>
+                                    (5ブロック、36×36mm)</dt>
+                                <dd>M字、L字、T字 各6枚</dd>
+                            </div>
+                            <div class="flex">
+                                <dt>テトリミノ<span class="br"></span>
+                                    (4ブロック、24×36mm)</dt>
+                                <dd>L字、T字 各12枚、S字 6枚</dd>
+                            </div>
+                            <div class="flex">
+                                <dt>トロミノ<span class="br"></span>
+                                    (3ブロック、24×24mm)</dt>
+                                <dd>L字 12枚</dd>
+                            </div>
+                            <div class="flex">
+                                <dt>トロミノ<span class="br"></span>
+                                    (3ブロック、36×12mm)</dt>
+                                <dd>まっすぐ 12枚</dd>
+                            </div>
+                            <div class="flex">
+                                <dt>モノミノ<span class="br"></span>
+                                    (1ブロック、12×12mm)</dt>
+                                <dd>5色 各25枚</dd>
+                            </div>
+                        </dl>
+                    </li>
+                    </li>
+                    <li>N パーツバッグ 3枚</li>
+                    <li>
+                        <figure>
+                            <figcaption>P マイルストーンカード 8枚</figcaption>
+                            <img src="../images/milestonecard_340x120.png" alt="マイルストーンを確認するためのカード" width="300">
+                        </figure>
+                    </li>
+                    <li>Q 追加アクションカード 5枚(予定)</li>
+                </ul>
+                <div class="kentou-container">
+                    <p class="kentou">(以下は検討中)</p>
+                </div>
+                <ul class="component">
+                    <li>R ボットカード(オートマ的なやつ) 20枚くらい</li>
+                    <li>S ゴミ箱(なくてもゲームは成立するけどあったほうが雰囲気出るやつ) 1個</li>
+                    <li>T 汎用マーカー 5〜6個</li>
+                </ul>
+            </section>
+
+            <small>
+                <p>
+                    注釈<span class="br"></span>
+                    *1　VP(Victory Point) ：勝利点、これが一番多いプレイヤーが勝者となる<span class="br"></span>
+                    *2　RG(Robo Gold) ：ロボゴールド→このゲームで使用されるお金の単位
+                </p>
+            </small>
+
+            <small>
+                <p>※以下は2～4人プレイの場合の準備、ゲームの説明になります。<span class="br"></span>
+                    　ソロルールは出来次第最後に追加します。</p>
+            </small>
+
+            <section class="info-section">
+                <h2 id="section3">ゲームの準備</h2>
+                <p><img src="../images/setupimage_1000x613.png" alt="セットアップアップイメージ" width="1000"></p>
+
+                <p>※アルファベットはコンポーネントに対応しています。</p>
+
+                <h3>1.　【C】</h3>
+                <p>工場ボードをテーブルの中央に配置します。</p>
+
+                <h3>2.　【C、D、E、F、G】</h3>
+
+                <p>
+                    各プレイヤーはプレイヤーカラーを赤、青、黄、緑の中から一色選びます。<span class="br"></span>
+                    対応する色のパーソナルボードを1枚ずつ受け取り、各プレイヤーのそばに配置します。
+                </p>
+                <p>
+                    同色のロボ駒、パーソナルトークンを受け取ります。<span class="br"></span>
+                    ロボ駒4つのうち2つはパーソナルボード左側の手前にある Available Robo (使用可能なロボ)置き場の色がついた箇所に立てて配置し、残りの2つは奥の Waiting Robo
+                    (待機中のロボ)置き場に寝かせて配置します。
+                </p>
+                <p>
+                    パーソナルトークンは全てパーソナルボードの脇に置いておきます。<span class="br"></span>
+                    3人プレイの場合は、選択されなかった色のロボ駒を NPC
+                    ロボ駒として、工場ボードの「4」のバッジのついたコンセント(*1)の上に、2人プレイの場合は更に「3」のバッジのついたコンセントの上に寝かせて起きます。<span class="br"></span>
+                    これは対象のコンセントが使用できないことを表しています。<span class="br"></span>
+                    詳細は下の図を参照してください(図作成中)。
+                </p>
+                <p>
+                    必要に応じてサマリーカードを受け取ります。
+                </p>
+
+                <!-- (図を作成して挿入) -->
+
+                <small>
+                    <p>
+                        *1 コンセント ：ロボがアクションをするために必要な電気を使用するためのもの<span class="br"></span>
+                        　空いているコンセントがないアクションは原則実行不可能
+                    </p>
+                </small>
+
+
+                <h3>3.　【C、H】</h3>
+                <p>各プレイヤーのVPマーカーを工場ボードの得点トラックの「10」の上に配置します(10VPでスタートします)。</p>
+
+                <h3>4.　【C、D、J】</h3>
+                <p>電気マーカーの1枚を工場ボードの蓄電メーターの対応する数字の上に配置します。</p>
+
+                <dl>
+                    <div class="flex">
+                        <dt>2人プレイ</dt>
+                        <dd>8</dd>
+                    </div>
+                    <div class="flex">
+                        <dt>3人プレイ</dt>
+                        <dd>12</dd>
+                    </div>
+                    <div class="flex">
+                        <dt>4人プレイ</dt>
+                        <dd>16</dd>
+                    </div>
+                </dl>
+
+                <p>各プレイヤーは1枚ずつ電気マーカーを受け取り、パーソナルボードの脇に置きます。</p>
+
+                <h3>5.　【K、L】</h3>
+                <p>
+                    最近据置型の人型ロボットを工場で労働させた人が最初のスタートプレイヤーになります。<span class="br"></span>
+                    いない場合はじゃんけん等適当な方法でスタートプレイヤーを決めます。
+                </p>
+                <p>
+                    スタートプレイヤーのパーソナルボードの右横にスタートプレイヤーマーカーを置きます。<span class="br"></span>
+                    各プレイヤーは下記の通り初期資源を得ます。下の図を参照してください。
+                </p>
+
+                <dl>
+                    <div class="flex">
+                        <dt>スタートプレイヤー</dt>
+                        <dd>なし</dd>
+                    </div>
+                    <div class="flex">
+                        <dt>2番手のプレイヤー</dt>
+                        <dd>1RG</dd>
+                    </div>
+                    <div class="flex">
+                        <dt>3番手のプレイヤー</dt>
+                        <dd>1RG＋任意のモノミノタイル1枚</dd>
+                    </div>
+                    <div class="flex">
+                        <dt>4番手のプレイヤー</dt>
+                        <dd>1RG＋任意のモノミノタイル2枚</dd>
+                    </div>
+                </dl>
+
+                <h3>6.　【M、N】</h3>
+                <p>
+                    使用するトロミノ、テトリミノ、ペントミノのパーツタイルは各種パーツバッグに分けて入れます。<span class="br"></span>
+                    使用するタイルは下記の通りです。</p>
+
+                <dl>
+                    <div class="flex">
+                        <dt>2人プレイ</dt>
+                        <dd>
+                            下記のうちプレイヤーカラーのブロックを含まないタイル
+                            <ul>
+                                <li>ペントミノ→L字、T字</li>
+                                <li>テトリミノ→L字、S字</li>
+                                <li>トロミノ→全て使用</li>
+                            </ul>
+                        </dd>
+                    </div>
+                    <div class="flex">
+                        <dt>3人プレイ</dt>
+                        <dd>
+                            <ul>
+                                <li>ペントミノ→L字、T字</li>
+                                <li>テトリミノ→L字、T字</li>
+                                <li>トロミノ→全て使用</li>
+                            </ul>
+                        </dd>
+                    </div>
+                    <div class="flex">
+                        <dt>4人プレイ</dt>
+                        <dd>全て使用</dd>
+                    </div>
+                </dl>
+
+                <p>
+                    モノミノはまとめて脇に置きます。<span class="br"></span>
+                    使用するモノミノタイルは下記の通りです。
+                </p>
+
+                <dl>
+                    <div class="flex">
+                        <dt>2人プレイ</dt>
+                        <dd>各色10枚</dd>
+                    </div>
+                    <div class="flex">
+                        <dt>3人プレイ</dt>
+                        <dd>各色15枚</dd>
+                    </div>
+                    <div class="flex">
+                        <dt>4人プレイ</dt>
+                        <dd>各色20枚</dd>
+                    </div>
+                </dl>
+
+                <p>各プレイヤーが取りやすいように複数に分けるとよいでしょう。</p>
+
+                <h3>7.　【P】</h3>
+                <p>
+                    マイルストーンカードをランダムにプレイヤー人数分＋2枚選出して、工場ボードの上側に表を上にして並べます。<span class="br"></span>
+                    残ったカードは使用しないので箱にしまいます。
+                </p>
+            </section>
+
+            <section class="info-section">
+                <h2 id="section4">リソースの管理方法</h2>
+                <dl>
+                    <div class="flex">
+                        <dt>VP<span class="br"></span>
+                            (Victory Point、<span class="br"></span>
+                            勝利点)</dt>
+                        <dd>
+                            工場ボードの端を囲っているのが得点トラックになり、VPマーカーを得点トラックに配置することで勝利点を表します。<span class="br"></span>
+                            最初は表向き(VPと記載されている方が上)に10VPに配置し、VPを獲得する際はマーカーを時計回りに移動させ、マイナス点が発生した場合は反時計回りに移動させます。<span
+                                class="br"></span>
+                            なお、最低点数は0VPとなり、これ以上下がることはありません。<span class="br"></span>
+                            50点を超えた場合は、マーカーを裏向き(50と記載されている方が上)にして使用します。
+                        </dd>
+                    </div>
+                    <div class="flex">
+                        <dt>電気</dt>
+                        <dd>
+                            パーソナル工場ボードの上側で、電気マーカーで残り使用可能な量を表します。<span class="br"></span>
+                            最初は規定量(プレイヤー人数×4)にマーカーを配置し、アクションの度に使用電気量分数値を減らしていきます。<span class="br"></span>
+                            黄色いマスが残り使用可能な量となります。<span class="br"></span>
+                            黒いマスは停電が発生し、外部から電気を購入しなければならない状況を表しています。
+                        </dd>
+                    </div>
+                    <div class="flex">
+                        <dt>RG<span class="br"></span>
+                            (Robo Gold)</dt>
+                        <dd>
+                            パーソナルボードの右側にて、2枚のRGマーカーで所持量を表します。<span class="br"></span>
+                            1枚は十の位、もう1枚は一の位を表します。<span class="br"></span>
+                            所持可能なRGは29までで、これよりも多くのRGを所持することはできません。
+                        </dd>
+                    </div>
+                    <div class="flex">
+                        <dt>パーツタイル</dt>
+                        <dd>
+                            パーツタイルは主にベルトコンベア当番が管理しますが、いつでもすべてのプレイヤーはパーツバッグに手を入れて残りのパーツタイルの数を探ることができます。<span
+                                class="br"></span>
+                            ただし、実際に取り出して確認することはできません。
+                        </dd>
+                    </div>
+                </dl>
+
+            </section>
+
+            <section class="info-section">
+                <h2 id="section5">ゲームの構成</h2>
+                <p>
+                    このゲームは以下の構成となります。<span class="br"></span>
+                    B〜Dを一つのラウンドとして扱い、ラウンドは終了フラグが立つまで繰り返します。</p>
+
+                <ol>
+                    <li>A スタートフェイズ</li>
+                    <li>B 供給フェイズ</li>
+                    <li>C アクションフェイズ</li>
+                    <li>D クリーンナップフェイズ</li>
+                    <li>E エンドフェイズ</li>
+                </ol>
+            </section>
+
+            <section class="info-section">
+                <h2 id="section6">ゲームの流れ</h2>
+                <p>
+                    このゲームは終了条件を満たすまでラウンドを繰り返します。
+                    終了条件は以下の2通りあり、いずれかの条件を満たした場合、終了フラグが立ちます。
+                    ※ゲーム終了時の処理についてはクリーンナップフェイズ、エンドフェイズの項目をご確認ください。
+                </p>
+
+                <ul>
+                    <li>いずれかのプレイヤーが6つの製品の出荷、またはロボとして使用し、チェックの付いた状態になる<span class="br"></span>
+                        →そのラウンドでゲーム終了</li>
+                    <li>クリーンナップフェイズのベルトコンベアの処理でパーツが十分に補充できなくなる<span class="br"></span>
+                        →次のラウンドでゲーム終了</li>
+                </ul>
+
+                <section>
+                    <h3>A スタートフェイズ</h3>
+                    <h4>1.　パーツの整備</h4>
+                    <p>
+                        最後の手番のプレイヤー(スタートプレイヤーマーカーの右側にいるプレイヤー)はベルトコンベア当番(以下当番)として工場ボードのベルトコンベアの箇所にパーツバッグからパーツタイル配置していきます。<span
+                            class="br"></span>
+                        配置のルールは以下の通りです。</p>
+                    <ul>
+                        <li>ベルトコンベアには8箱のダンボールがあり、各ダンボールに2つずつパーツタイルを配置します。<span class="br"></span>
+                            NPCロボが配置されているダンボールにはパーツを配置しません。</li>
+                        <li>最初に配置可能な数分パーツタイルをパーツバッグから取り出します。<span class="br"></span>
+                            取り出すパーツの組み合わせは問いません。<span class="br"></span>
+                            1つのバッグから取り出しても、複数のバッグから取り出しても構いませんが、中身を見ることはできません。<span class="br"></span>
+                            また、パーツを配置可能な数を超えて取り出してはいけません。</li>
+                        <li>取り出したパーツタイルを好きな組み合わせで配置対象のダンボール1箇所につき2枚ずつ好きな組み合わせで配置します。</li>
+                    </ul>
+
+                    <small>
+                        ※当番制について
+                        このゲームではスタートプレイヤーが有利な状況を緩和させることを目的に当番制を設けています。
+                        当番は各ラウンドのクリーンナップフェイズでもパーツの整備をします。
+                    </small>
+
+                    <h4>2.　初期配置タイルの選択、配置</h4>
+                    <p>
+                        当番のプレイヤーは更にプレイヤー人数×２の枚数のパーツタイルを取り出し、当番から反時計回りに1枚ずつパーツを取ります。これを2週します。<span class="br"></span>
+                        その後、各プレイヤーはパーソナルボードの製造スペースに配置します。
+                    </p>
+
+                    <!-- (パーソナルボードの図解) -->
+
+                    <p>◆パーツ配置のルール</p>
+                    <ul>
+                        <li>製造スペースの枠をはみ出してパーツを配置することはできません。</li>
+                        <li>製造スペースに対して斜めにパーツを配置することはできません。</li>
+                        <li>同色のブロックを隣接させることはできません(白パーツを除く)。</li>
+                        <li>
+                            スタートフェイズのときのみ配置する製造スペースは問いません。<span class="br"></span>
+                            スタートフェイズ後のパーツ配置の際は横Ⅰ列の製造スペースのみ配置が可能です。<span class="br"></span>
+                            ※1つでもⅠ列の製造スペースの製品が出荷済の場合はⅡ列にも、の製品が出荷済の場合はⅢ列にも配置が可能となります。<span class="br"></span>
+                            チェックについては「出荷」、「ロボコンポーネント」アクションにて説明します。<span class="br"></span>
+                        </li>
+                        <li>パーツ同士を重ね上と左下のマスは「既にプレイヤーカラーのモノミノタイルが配置された状態」を表していますが、これらに限って他のパーツタイルで上書きすることが可能です。</li>
+                        <li>一度配置したパーツは「ブレイクダウン」アクションを実施しない限りは取り除いたり移動することはできません。</li>
+                        <li>被せることによってモノミノタイルやRGがもらえるマス(ボーナスタイル)があります。<span class="br"></span>
+                            スタートフェイズを含めて、ボーナスマスを被せる度に即座に該当の資源を得ても構いません。<span class="br"></span>
+                            モノミノタイルは配置可能な製造スペースに即座に配置します。</li>
+                        <li>既にチェックが入っている製造スペースにはタイルの配置もタイルの取り外しもできません。</li>
+                        <li>タイルを配置する際に、タイルを回転させたり裏返しても構いません。<span class="br"></span>
+                            なお、モノミノタイル以外の全てのタイルは必ず2色で互い違いに配色されており、両面の色は同じとなっています。</li>
+                        <li>タイルを配置する際に、タイルを回転させたり裏返しても構いません。<span class="br"></span>
+                            なお、モノミノタイル以外の全てのタイルは必ず2色で互い違いに配色されており、両面の色は同じとなっています。</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>B　供給フェイズ</h3>
+                    <p>以下を参照して、供給されるRG(Robo Gold)と電気を確認します。</p>
+                    <ul>
+                        <li>誰もロボを追加していない場合<span class="br"></span>
+                            →全プレイヤーは5RGを獲得<span class="br"></span>
+                            　初期の電気供給量まで供給<span class="br"></span>
+                            　　※前のラウンドで電気が余ってもラウンドはじめの電気の量は変わりません。
+                            <dl>
+                                <div class="flex">
+                                    <dt>2人プレイ</dt>
+                                    <dd>8</dd>
+                                </div>
+                                <div class="flex">
+                                    <dt>3人プレイ</dt>
+                                    <dd>12</dd>
+                                </div>
+                                <div class="flex">
+                                    <dt>4人プレイ</dt>
+                                    <dd>16</dd>
+                                </div>
+                            </dl>
+
+                        <li>ロボが追加されている場合<span class="br"></span>
+                            →ロボを追加しているプレイヤーは開放されたWaiting Robo の置き場を参照して、記載されているRGの分追加で獲得<span class="br"></span>
+                            　同様に開放された Waiting Robo の置き場に記載の電気の分だけ追加で供給</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>C　アクションフェイズ</h3>
+                    <p>
+                        スタートプレイヤーから時計回りの順番で、1つずつ Available Roboをアクションスペースのコンセントに配置し、配置されたアクションスペースの効果を得ます。<span
+                            class="br"></span>
+                        ほとんどのアクションが電気を消費します。<span class="br"></span>
+                        また、RBを支払ったり実行の条件があるアクションがあります。
+                    </p>
+                    <p>
+                        電気を使用する際に、工場ボードの電気メーターの数字を使用分だけ減らしていきます。<span class="br"></span>
+                        Available Robo がなくなった場合は自動的にパスとなります。
+                    </p>
+                    <p>
+                        全てのプレイヤーの Available Robo がなくなるか、停電が発生するとアクションフェイズが終了します。
+                    </p>
+                    <p>
+                        停電を発生させた(電気メーターの数値が1を下回った)プレイヤーは過剰に使用した分マイナス点が入ります。
+                    </p>
+                    <p>
+                        停電が発生しておらず Available Robo がある場合はいかなる場合でもパスはできず、必ず何かしらのアクションを実行しなくてはなりません。
+                    </p>
+                    スタートプレイヤーから時計回りの順番で、1つずつ Available Roboをアクションスペースのコンセントに配置し、配置されたアクションスペースの効果を得ます。<span
+                        class="br"></span>
+                    ほとんどのアクションが電気を消費します。<span class="br"></span>
+
+                    <h4>◆出荷について</h4>
+                    <p>
+                        出荷はフリーアクションとして、各プレイヤーがアクションを実行する直後に1回のみ実行できます。<span class="br"></span>
+                        作業スペースの「製造中」(チェックが入っていない)製品1つに対して「出荷」をすることでVPを得るために実行するものとなります。
+                    </p>
+
+                    <p>
+                        出荷は下記の流れで実行されます。
+                    </p>
+
+                    <ol>
+                        <li>出荷可否の確認<span class="br"></span>
+                            以下のすべての条件が満たされた場合、出荷可となります。<span class="br"></span>
+                            <ul>
+                                <li>未チェックの製造スペースの製品である</li>
+                                <li>2×2のサイズ以上の四角形である<span class="br"></span>
+                                    　いびつな形の場合は、切り取ることで2×2のサイズの四角形になれば出荷はできます。
+                                </li>
+                            </ul>
+                        </li>
+                        <li>得点の確認<span class="br"></span>
+                            (基本点) － (カット回数) － (白パーツ数)　<span class="br"></span>
+                            <ul>
+                                <li>基本点 ：出荷する製品のサイズに応じて基本点が決定します。<span class="br"></span>
+                                    3×3のサイズ以上はRGボーナスが付与されています。<span class="br"></span>
+                                    <dl>
+                                        <div class="flex">
+                                            <dt>2×2</dt>
+                                            <dd>1VP</dd>
+                                        </div>
+                                        <div class="flex">
+                                            <dt>2×3、2×4</dt>
+                                            <dd>3VP</dd>
+                                        </div>
+                                        <div class="flex">
+                                            <dt>3×3</dt>
+                                            <dd>6VP、1RG</dd>
+                                        </div>
+                                        <div class="flex">
+                                            <dt>3×4</dt>
+                                            <dd>10VP、3RG</dd>
+                                        </div>
+                                        <div class="flex">
+                                            <dt>4×4</dt>
+                                            <dd>15VP、5RG</dd>
+                                        </div>
+                                    </dl>
+                                </li>
+                                <li>カット回数 ：いびつな形の場合は、きれいな四角形にするため、カットする必要があります。<span class="br"></span>
+                                    直線で最短回数でカットした回数分マイナス点が入ります。
+                                </li>
+                                <li>
+                                    白パーツ数 ：出荷する製品に含まれる白パーツの数分マイナス点が入ります。<span class="br"></span>
+                                    カットされた箇所に含まれる場合はカウントしません。
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            出荷する製品の色の決定
+                            <ul>
+                                <li>出荷した四角形の中で最も多く配色されている色が製品の色となります。</li>
+                                <li>最多が複数ある場合は、その中から白色を除き1色指定します。</li>
+                                <li>製品の色のモノミノタイルを出荷した製品の製造スペース右上(破線のマス)に配置し、対象の製品を該当の色で出荷したことを示します(これをチェックと呼びます)。<span
+                                        class="br"></span>
+                                    なお、チェックに使用するモノミノタイルが既に枯渇していた場合、その色はもう存在しないこと扱いとなり、これ以降枯渇しているモノミノタイルの色として出荷はできません。
+                                </li>
+                                <li>製品の最多の色のモノミノタイルがすべて枯渇している場合、その次に多い色が製品の色となります。</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>D　クリーンナップフェイズ</h3>
+                    <p>
+                        以下の順番に処理をします。<span class="br"></span>
+                        最終ラウンドの場合は「1.　マイルストーンチェック」のみ実施し、エンドフェイズに移ります(2以降の処理は実施してもしなくても勝敗に影響はないためスキップ)。
+                    </p>
+
+                    <ol>
+                        <li>
+                            マイルストーンチェック<span class="br"></span>
+                            ロックされていないマイルストーンの中で達成したものがあるプレイヤーは、未使用のパーソナルマーカー1つを該当のマイルストーンカードの上に配置することを引き換えにマイルストーンボーナスを得ます。<span
+                                class="br"></span>
+                            複数のプレイヤーが同時にパーソナルマーカーを置くことができます。<span class="br"></span>
+                            また、同一のラウンドで複数のマイルストーンを達成した場合、それぞれのマイルストーンカードにパーソナルマーカーを置くことで複数ボーナスを得ることができます。<span
+                                class="br"></span>
+                            なお、未使用のパーソナルマーカーがないプレイヤーは、これ以上マイルストーンボーナスを得ることはできません。<span class="br"></span>
+                            パーツタイルマーカーが配置されたマイルストーンはロックされます。<span class="br"></span>
+                            また、既に前のラウンドでパーソナルマーカーが配置されてロックされたマイルストーンにはパーソナルマーカーを置くことはできず、マイルストーンボーナスを得ることはできません。<span
+                                class="br"></span>
+                            <ul>
+                                <li>Ⅰ</li>
+                                <li>Ⅱ</li>
+                                <li>A</li>
+                                <li>20RG</li>
+                                <li>4 workers</li>
+                                <li>4 white parts</li>
+                                <li>Sell Robo</li>
+                                <li>Huge Robo</li>
+                                <li>3 Fully products</li>
+                            </ul>
+                        </li>
+                        <li>
+                            ロボブースターチェック<span class="br"></span>
+                            「ロボブースター」アクションを実施しているプレイヤーがいればスタートプレイヤーマーカーは移動せず、「ロボブースター」アクションを実施しているプレイヤーがいなければスタートプレイヤーマーカーの位置を時計回りに移動させます(次のラウンドのスタートプレイヤーが変更されます)。
+                        </li>
+                        <li>
+                            アクション済ロボの帰還<<span class="br"></span>
+                                停電になった際に使用されていない Available Robo があるプレイヤーは、1体につきパーソナルボードの電気が蓄えられます。<span
+                                    class="br"></span>
+                                前ラウンドで入手した電気は持ち越されません。<span class="br"></span>
+                                各プレイヤーはアクションスペースに配置された自分のロボをパーソナルボードの Available Robo 置き場に戻します。
+                        </li>
+                        <li>
+                            パーツタイルの整備<span class="br"></span>
+                            当番が誰かを確認します。<span class="br"></span>
+                            この時点でスタートプレイヤーマーカーが左側にあるプレイヤー(次のラウンドで最後の手番となるプレイヤー)が当番となります。<span class="br"></span>
+                            当番は下記の順に処理を実行します。<span class="br"></span>
+                            複数の選択肢が発生するような状況が発生した場合は、当番が選択します。<span class="br"></span>
+                            <ol>
+                                <li>ベルトコンベアに残ったパーツのうち、一番ゴミ箱に近いパーツをすべて破棄します。<span class="br"></span>
+                                    ※破棄するパーツタイルはパーツバッグには戻さず、ゲームから除外します。</li>
+                                <li>ベルトコンベアに残った他のパーツはすべて段ボールごとに2つずつになるようにパーツをゴミ箱側から詰めていきます。</li>
+                                <li>段ボールに空きがなくなるまで、パーツバッグからパーツを補充します。<span class="br"></span>
+                                    まず、補充する数だけ好きな組み合わせでパーツをパーツバッグから取り出します。<span class="br"></span>
+                                    余計に取り出してはいけません。<span class="br"></span>
+                                    補充完了する前にすべてのパーツバッグの中身がなくなった場合、補充はできるだけ実施し、パーツバッグをひっくり返してパーツがなくなったことを他のプレイヤーに伝えます。<span
+                                        class="br"></span>
+                                    補充後にエンドフェイズに進みます。</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h3>D　エンドフェイズ</h3>
+                    <ol>
+                        <li>各プレイヤーは望むのなら1回だけ出荷をします。</li>
+                        <li>
+                            各種エンドボーナスを確認します。<span class="br"></span>
+                            <dl>
+                                <div class="flex">
+                                    <dt>ビンゴボーナス</dt>
+                                    <dd>IA-IC間、IA-ⅢA間、IC-ⅢA間の各製造スペースのチェックを確認し、3つすべてが同じ色の場合、1列につき4VPを獲得します。</dd>
+                                </div>
+                                <div class="flex">
+                                    <dt>Available Robo<span class="br"></span>
+                                        ボーナス</dt>
+                                    <dd>最終的に解放しているロボ(Available Robo、工場ボードに配置されたロボ)1体につき1VPを獲得します。</dd>
+                                </div>
+                                <div class="flex">
+                                    <dt>RGボーナス</dt>
+                                    <dd>最終的に所持している5RGにつき1VPを獲得します。</dd>
+                                </div>
+                            </dl>
+                        </li>
+                </section>
+
+                <section>
+                    <h2 id="section7">勝利条件</h2>
+                </section>
+                <p>次の順番に勝者が決するまで判定をします。</p>
+                <ol>
+                    <li>エンドフェイズのボーナス確認後、最大のVPを獲得したプレイヤーが勝利となります。 </li>
+                    <li>VPが同じ場合は、出荷した製品の基本点が大きいプレイヤーが勝利となります。</li>
+                    <li>VPも出荷した製品の基本点も同じ場合は最終的に所持しているRGの多いプレイヤーが勝利です。</li>
+                    <li>上記すべてが同じ場合は1～3に該当する全てのプレイヤーが勝者となります。</li>
+                </ol>
+
+                <section class="action">
+                    <h2 id="section8">アクションの説明</h2>
+                    <h3>発電(Power Generation)</h3>
+                    <p>
+                        ※このアクションだけ電気が減りません。<span class="br"></span>
+                        工場ボードの残り使用可能な電気が1増えます。<span class="br"></span>
+                        1RGを獲得します。<span class="br"></span>
+                        望むなら、白のモノミノタイルを1つ配置可能な製造スペースに配置してもかまいません。
+                    </p>
+
+                    <h3>放電(Discharge)</h3>
+                    <p>
+                        ※このアクションだけ複数のロボの配置が可能です。<span class="br"></span>
+                        1電気消費します。
+                    </p>
+
+                    <H3>ロボブースター(Robo Booster)</H3>
+                    <p>
+                        スタートプレイヤーマーカーを移動させることができます。
+                        移動させなくてもかまいません。
+                    </p>
+
+                    <h3>ブレイクダウン(Breakdown)</h3>
+                    <p>
+                        チェックが入っていない製造スペースにあるパーツタイルを1つ選択し、モノミノタイルに変換し、そのうち最低2つを除いて残りのモノミノタイルを配置可能な製造スペースに再配置します。<span
+                            class="br"></span>
+                        この際に複数の製造スペースに配置してもかまいません。<span class="br"></span>
+                        なお、ストックのモノミノタイルが足りない場合は、可能な分だけ使用します(ストックにない分はロストとなります)。<span class="br"></span>
+                        変換元のパーツタイルは破棄し、取り除いたモノミノタイルはストックに戻します。
+                    </p>
+
+                    <p>
+                        例1<span class="br"></span>
+                        赤3、青2のペントミノタイルにブレイクダウンを実施することにしました。<span class="br"></span>
+                        まず、ペントミノタイルを製造スペースから取り外して赤のモノミノタイル3つ、青のモノミノタイル2に変換しました。<span class="br"></span>
+                        その後、2つのモノミノタイルを除いて残りの3つのモノミノタイルを再配置しました。
+                    </p>
+
+                    <p>
+                        例2<span class="br"></span>
+                        青2、黄1のトロミノタイルにブレイクダウンを実施することにしました。<span class="br"></span>
+                        まず、ペントミノタイルを製造スペースから取り外して青のモノミノタイル2つ、青のモノミノタイル1に変換しようとしたところ、青のモノミノタイルのストックが0でした。<span
+                            class="br"></span>
+                        そのため、青のモノミノタイルには変換できず黄のモノミノタイル1だけ変換し、2つのモノミノタイル(青)を除いて残りの1つの黄のモノミノタイルを再配置しました。
+                    </p>
+
+                    <p>
+                        例3<span class="br"></span>
+                        緑のモノミノタイルにブレイクダウンを実施することにしました。<span class="br"></span>
+                        2つのブロックを除くと1を下回るので、再配置できるモノミノタイルはありません。<span class="br"></span>
+                        つまり、モノミノタイルを取り除かれただけでブレイクダウンアクションは終了します。
+                    </p>
+
+                    <h3>内職(Inside Job)</h3>
+                    <p>
+                        RGを獲得します。<span class="br"></span>
+                        使用するコンセントごとに使用する電気と得られるRGが変わります。
+                    </p>
+
+                    <h3>白パーツ(White Part)</h3>
+                    <p>
+                        白のモノミノタイルを1つか2つ、配置可能な製造スペースに配置します。
+                    </p>
+
+                    <h3>ノウハウ(Know-How)</h3>
+                    <p>
+                        以下の2つから選択して実行します。<span class="br"></span>
+                    <ul>
+                        <li>5RGを2VPに変換</li>
+                        <li>1VPを7RGに変換</li>
+                    </ul>
+                    </p>
+
+                    <h3>ロボコンポーネント(Robo Component)</h3>
+                    <p>
+                        以下の2つから1つを選択して実行します。<span class="br"></span>
+                    <ul>
+                        <li>ロボ製造<span class="br"></span>
+                            未チェックの2×3以上のサイズの製品を出荷する代わりにロボとして製造します。<span class="br"></span>
+                            即座に該当の製造スペースの右上にパーソナルマーカーを配置し、Waiting Robo 1体をAvailable Robo 置場に移動させます。<span
+                                class="br"></span>
+                            このロボはこのラウンドから使用可能となります。<span class="br"></span>
+                            これも出荷と同様に「チェック」されたという扱いになります。<span class="br"></span>
+                            その際に製品の色は参照しません。<span class="br"></span>
+                            出荷と同様にいびつな形であったり、白パーツが含まれている場合はマイナス点が入ります。
+                        </li>
+                        <li>
+                            ロボ売却
+                            Available Robo 置場にあるロボを1体破棄します(ゲームから除外します)。<span class="br"></span>
+                            その後5RGを得ます。</li>
+                    </ul>
+
+                    <h3>延長コード(Extention Cord)</h3>
+                    <p>
+                        既に使用されている(コンセントが埋まっている)アクションに対してコピーするアクションです(コード使用料としてコピー元アクションの実行コストに加えて2RG必要です)。<span
+                            class="br"></span>
+                        コピーしたいアクションのコンセントが空いている場合は、コピー元のアクションを使用しなくてはなりません。
+                    </p>
+                </section>
+
+                <section>
+                    <h2 id="section9">ソロルールについて(執筆中)</h2>
+                    <p>
+                        仮想の2プレイを実施して、相手プレイヤー(以下相手)に勝利することが目的です。<span class="br"></span>
+                        場に出ているマイルストーンカードやボットカードによって相手のアクション方針が決定します。<span class="br"></span>
+                        相手は必ず規定のラウンドで順番にマイルストーンを達成します。<span class="br"></span>
+                        そしてすべてのマイルストーンを達成したあと、規定のラウンドが終了するとゲームが終了します。
+                    </p>
+                    <ol>
+                        <li>マイルストーンカードは5枚ランダムで選出され、横一列に並べます。</li>
+                        <li>一番左のマイルストーンカードの一番左のマスに相手プレイヤーのパーソナルトークンを配置します。</li>
+                        <li>
+                            ラウンドが終わるたびに一つずつ右のマスに進めていき、一番最後のマスに到着するか、補充できるパーツタイルがなくなった場合、次のラウンドでゲームが終了します。<span
+                                class="br"></span>
+                            ゲーム終了時に獲得したVPによって、下記のランクを獲得します。<span class="br"></span>
+                            エキスパートを目指しましょう！！
+                        </li>
+                    </ol>
+
+                    <dl>
+                        <div class="flex">
+                            <dt>見習い</dt>
+                            <dd>～49VP</dd>
+                        </div>
+                        <div class="flex">
+                            <dt>中堅</dt>
+                            <dd>50VP～69VP</dd>
+                        </div>
+                        <div class="flex">
+                            <dt>ベテラン</dt>
+                            <dd>70VP～100VP</dd>
+                        </div>
+                        <div class="flex">
+                            <dt>エキスパート</dt>
+                            <dd>100VP～</dd>
+                        </div>
+                    </dl>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <img src="../images/robofac_logo_wh_600x70.svg" alt="ロボファクチュアのロゴ" width="400">
+        <p><small>&copy;2019-2026 Mami Fujisawa All right reserved.</small></p>
+    </footer>
+
+    <!-- 上に戻るボタン -->
+    <div class="robo-bura">
+        <img src="../images/burasagari_socket_100x700.svg" class="btn-socket" width="100" height="700">
+        <a href="#" class="btn-robo">
+            <img src="../images/burasagari_robo_100x700.svg" alt="上に戻る" class="robo-img robo-normal" width="100"
+                height="700">
+            <img src="../images/burasagari_hover_100x700.svg" alt="ホバー時の上に戻る" class="robo-img robo-active" width="100"
+                height="700">
+        </a>
+    </div>
+
+    <script>
+        window.onload = function () {
+            const loader = document.getElementById('loading');
+            setTimeout(() => {
+                loader.style.opacity = '0';
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 500);
+            }, 2000);
+        };
+    </script>
+</body>
+
+<div id="loading">
+    <img src="../images/robo.gif" alt="読み込み中ロボ" class="loading-robo">
+    <p>Loading...</p>
+
+</html>
