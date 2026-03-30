@@ -1,0 +1,122 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* 画像の下に発生する小さな余白を取り払う */
+img {
+    vertical-align: bottom;
+}
+
+/* リンク部分のアンダーラインを取り払う */
+a {
+    text-decoration: none;
+}
+
+/* ※このほかにも、必要に応じて書き足します */
+
+
+/* --------------------------------------------
+    全体のベースとなる基本的な指定 (*,bodyへの指定)
+----------------------------------------------*/
+
+/* 全てのタグのサイズ計算方法をborder-boxに統一 */
+/* ※ border-box = padding,border込みのサイズがwidthとなる計算方法 */
+* {
+    box-sizing: border-box;
+}
+
+/* bodyをセレクタにしてページ全体に適用させる基本的な指定を行う */
+body {
+    font-size: 16px;
+    font-family: YuGothic, "Yu Gothic", "游ゴシック", "游ゴシック体", sans-serif;
+    color: #ffffff;
+    font-weight: 500;
+    background-color: #004747;
+}
+
+
+/* --------------------------------------------
+    エリアごとの仕上げの指定 
+    (外側のタグへの指示 → 内側のタグへの指示 の順で
+    書いていくと整理しやすい)
+----------------------------------------------*/
+
+main {
+    margin: 32px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+}
+
+main h1 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.site-logo {
+    width: 500px;
+    height: auto;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 24px;
+}
+
+.photo-item {
+  display: flex;
+  flex-direction: column; /* 縦に並べる */
+  gap: 30px;              /* 画像の間の隙間 */
+}
+
+.back-to-top {
+    background-color: transparent !important;
+    position: fixed;
+    /* 画面に固定 */
+    bottom: 20px;
+    /* 下からの距離 */
+    right: 20px;
+    /* 右からの距離 */
+    display: block;
+    width: 100px;
+    /* 画像のサイズ調整 */
+    z-index: 1000;
+    /* 他の要素より前に表示 */
+}
+
+.back-to-top img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    .site-logo {
+        width: 360px;
+    }
+}
